@@ -7,3 +7,4 @@ const dashboard = async (req, res) => {
     res.status(200).json({msg: `Hello Mr. X`, secret: `Data Authorised: Your lucky number is ${luckyNum}`})
 }
 
+module.exports = {login, dashboard}
