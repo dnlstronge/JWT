@@ -6,6 +6,6 @@ const {login, dashboard} = require("../controllers/main")
 // routes: 
 
 router.route("/dashboard").get(dashboard);
-router.login("login").post(login)
+router.route("login").post(login)
 
 module.exports = router; 
