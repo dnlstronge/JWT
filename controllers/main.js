@@ -12,7 +12,9 @@ const login = async (req, res) => {
     if(!username || !password) {
         throw new CustomAPIError("Please provide email and password", 400)
     }
-    
+    // // again, for demo purposes - in prod use long unguessable string value
+    const id = new Date().getDate() // demo purposed normally get from db
+    const token = jwt.sign({id, username}, process.env.JWT_SECRET); // keep payload small
     res.send("dummy login/signup route")
 }
 
