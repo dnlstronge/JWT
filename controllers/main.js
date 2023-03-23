@@ -3,7 +3,7 @@
 // check for username & password
 // if exists create new JWT
 // send back to frontend
-
+const jwt = require("jsonwebtoken")
 const CustomAPIError = require("../errors/custom-error")
 
 const login = async (req, res) => {
