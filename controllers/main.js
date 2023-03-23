@@ -14,8 +14,8 @@ const login = async (req, res) => {
     }
     // // again, for demo purposes - in prod use long unguessable string value
     const id = new Date().getDate() // demo purposed normally get from db
-    const token = jwt.sign({id, username}, process.env.JWT_SECRET); // keep payload small
-    res.send("dummy login/signup route")
+    const token = jwt.sign({id, username}, process.env.JWT_SECRET, {expiresIn: "30d"}); // keep payload small
+    res.status(200).json({msg: "user created", token})
 }
 
 
